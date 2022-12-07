@@ -2,10 +2,23 @@
 local startify = require 'alpha.themes.startify'
 
 startify.section.header.val = {
-[[ ^  ^  ^   ^      ___I_      ^  ^   ^  ^  ^   ^  ^ ]],
-[[/|\/|\/|\ /|\    /\-_--\    /|\/|\ /|\/|\/|\ /|\/|\]],
-[[/|\/|\/|\ /|\   /  \_-__\   /|\/|\ /|\/|\/|\ /|\/|\]],
-[[/|\/|\/|\ /|\   |[]| [] |   /|\/|\ /|\/|\/|\ /|\/|\]],
+[[ .              +   .                .   . .     .  .  ]],
+[[                   .                    .       .     *]],
+[[  .       *                        . . . .  .   .  + . ]],
+[[            "You Are Here"            .   .  +  . . .  ]],
+[[.                 |             .  .   .    .    . .   ]],
+[[                  |           .     .     . +.    +  . ]],
+[[                 \|/            .       .   . .        ]],
+[[        . .       V          .    * . . .  .  +   .    ]],
+[[           +      .           .   .      +             ]],
+[[                            .       . +  .+. .         ]],
+[[  .                      .     . + .  . .     .      . ]],
+[[           .      .    .     . .   . . .        ! /    ]],
+[[      *             .    . .  +    .  .       - O -    ]],
+[[          .     .    .  +   . .  *  .       . / |      ]],
+[[               . + .  .  .  .. +  .                    ]],
+[[.      .  .  .  *   .  *  . +..  .            *        ]],
+[[ .      .   . .   .   .   . .  +   .    .            + ]]
 }
 
 startify.section.top_buttons.val = {
@@ -15,7 +28,8 @@ startify.section.top_buttons.val = {
     startify.button('e', 'new file', '<cmd>enew <bar> startinsert<cr>'),
     startify.button('f', 'search files', '<cmd>Telescope find_files<cr>'),
     startify.button('g', 'search contents', '<cmd>Telescope live_grep<cr>'),
-    startify.button('h', 'search help', '<cmd>Telescope help_tags<cr>')
+    startify.button('h', 'search help', '<cmd>Telescope help_tags<cr>'),
+    startify.button('q', 'exit', '<cmd>qa<cr>')
 }
 
 startify.section.mru.val = {
@@ -49,9 +63,7 @@ startify.section.mru_cwd.val = {
     },
 }
 
-startify.section.bottom_buttons.val = {
-    startify.button('q', 'exit neovim', '<cmd>qa<cr>')
-}
+startify.section.bottom_buttons.val = {}
 
 startify.section.footer.val = {}
 

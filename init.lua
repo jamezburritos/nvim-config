@@ -2,10 +2,6 @@
 -- nvim - modal text editor
 --
 
-local o   = vim.opt
-local g   = vim.g
-local cmd = vim.cmd
-
 -- modules
 require 'keybinds'
 require 'autos'
@@ -16,41 +12,20 @@ require 'paq' {
     'savq/paq-nvim',
 
     -- miscellaneous
-    'akinsho/toggleterm.nvim',      -- terminal integration
-    'anuvyklack/hydra.nvim',        -- submenus
-    'goolord/alpha-nvim',	        -- greeter
-    'lewis6991/gitsigns.nvim',      -- git signcolumn
-    'm-demare/hlargs.nvim',         -- highlight arguments
-    'norcalli/nvim-colorizer.lua',	-- color highlighting
-    'numToStr/Comment.nvim',	    -- comments
-    'nvim-lualine/lualine.nvim',	-- statusline
     'windwp/nvim-autopairs',	    -- auto pairing
+    'norcalli/nvim-colorizer.lua',	-- color highlighting
+    'AmeerTaweel/todo.nvim',        -- comment highlighting
+    'numToStr/Comment.nvim',	    -- comments
+    'lewis6991/gitsigns.nvim',      -- git signcolumn
+    'goolord/alpha-nvim',	        -- greeter
+    'm-demare/hlargs.nvim',         -- highlight arguments
+    'nvim-lualine/lualine.nvim',	-- statusline
+    'anuvyklack/hydra.nvim',        -- submenus
     'xiyaowong/nvim-transparent',   -- transparent background
 
     -- colorschemes
     'saihnne/everforest',
     'nekonako/xresources-nvim',
-
-    -- folding
-    'kevinhwang91/nvim-ufo',
-    'kevinhwang91/promise-async',
-
-    -- file tree
-    'kyazdani42/nvim-tree.lua',
-    'kyazdani42/nvim-web-devicons',
-
-    -- file finder
-    'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope-fzf-native.nvim',
-    'nvim-telescope/telescope.nvim',
-
-    -- lsp
-    'neovim/nvim-lspconfig',
-    { 'lsp_lines.nvim', url='https://git.sr.ht/~whynothugo/lsp_lines.nvim' },
-
-    -- treesitter
-    'nvim-treesitter/nvim-treesitter',
-    'nvim-treesitter/nvim-treesitter-refactor',
 
     -- completion
     'hrsh7th/cmp-buffer',
@@ -58,53 +33,87 @@ require 'paq' {
     'hrsh7th/cmp-path',
     'hrsh7th/nvim-cmp',
 
-    -- snippets
-    'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
+    -- debugging
+    'mfussenegger/nvim-dap',
+    'rcarriga/nvim-dap-ui',
+    'theHamsta/nvim-dap-virtual-text',
+
+    -- file finder
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope-fzf-native.nvim',
+    'nvim-telescope/telescope.nvim',
+
+    -- file tree
+    'kyazdani42/nvim-tree.lua',
+    'kyazdani42/nvim-web-devicons',
+
+    -- folding
+    'kevinhwang91/nvim-ufo',
+    'kevinhwang91/promise-async',
 
     -- language support
     'ron-rs/ron.vim',
     'Fymyte/rasi.vim',
-    'tikhomirov/vim-glsl'
+    'tikhomirov/vim-glsl',
+    'preservim/vim-markdown',
+
+    -- language server
+    'neovim/nvim-lspconfig',
+
+    -- snippets
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+
+    -- treesitter
+    'nvim-treesitter/nvim-treesitter',
+    'nvim-treesitter/nvim-treesitter-refactor',
+
+    -- window autosizing
+    'anuvyklack/animation.nvim',
+    'anuvyklack/middleclass',
+    'anuvyklack/windows.nvim',
 }
 
 -- options
-o.cursorline 	 = true
-o.expandtab 	 = true
-o.foldenable     = true
-o.hidden         = true
-o.ignorecase 	 = true
-o.incsearch 	 = true
-o.number 	     = true
-o.relativenumber = true
-o.showcmd	     = true
-o.smartcase 	 = true
-o.splitbelow 	 = true
-o.splitright     = true
-o.termguicolors  = true
+vim.o.cursorline 	 = true
+vim.o.expandtab 	 = true
+vim.o.foldenable     = true
+vim.o.hidden         = true
+vim.o.ignorecase 	 = true
+vim.o.incsearch 	 = true
+vim.o.number 	     = true
+vim.o.relativenumber = true
+vim.o.showcmd	     = true
+vim.o.smartcase 	 = true
+vim.o.splitbelow 	 = true
+vim.o.splitright     = true
+vim.o.termguicolors  = true
 
-o.backup 	     = false
-o.hlsearch 	     = false
-o.wrap 	         = false
-o.swapfile       = false
+vim.o.backup 	     = false
+vim.o.equalalways    = false
+vim.o.hlsearch 	     = false
+vim.o.wrap 	         = false
+vim.o.swapfile       = false
 
-o.cmdheight      = 0
-o.foldlevel      = 99
-o.foldlevelstart = 99
-o.history    	 = 1000
-o.laststatus 	 = 3
-o.mouse      	 = 'a'
-o.scrolloff  	 = 5
-o.shell          = '/bin/zsh'
-o.shiftwidth 	 = 4
-o.signcolumn 	 = 'auto:1'
-o.tabstop    	 = 4
+vim.o.cmdheight      = 1
+vim.o.foldlevel      = 99
+vim.o.foldlevelstart = 99
+vim.o.history    	 = 1000
+vim.o.laststatus 	 = 3
+vim.o.mouse      	 = 'a'
+vim.o.scrolloff  	 = 5
+vim.o.shell          = '/bin/zsh'
+vim.o.shiftwidth 	 = 4
+vim.o.signcolumn 	 = 'auto:1'
+vim.o.tabstop    	 = 4
+vim.o.winwidth       = 10
+vim.o.winminwidth    = 10
 
 vim.diagnostic.config {
     update_in_insert = true,
-    virtual_text = false,
+    virtual_text = true,
 }
 
 -- colors
-g.transparent_enabled = true
-cmd 'colorscheme xresources'
+vim.g.transparent_enabled = true
+vim.cmd 'colorscheme xresources'

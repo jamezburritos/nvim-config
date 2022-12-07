@@ -21,11 +21,29 @@ cmp.setup({
     }),
 
     sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
+        { name = 'nvim_lsp', priority = 0 },
         { name = 'luasnip' },
     }, {
         { name = 'buffer' },
-    })
+        -- { name = 'path' }
+    }),
+
+    experimental = {
+        ghost_text = true
+    },
+
+    formatting = {
+        format = function (_, vim_item)
+            vim_item.kind = string.sub(vim_item.kind, 1, 20)
+            return vim_item
+        end
+    },
+
+    window = {
+        completion = {
+            max_width = 50
+        }
+    }
 })
 
 cmp.setup.cmdline('/', {

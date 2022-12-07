@@ -6,8 +6,8 @@ require 'Comment'.setup {
         block = '<leader>bc',
     },
     opleader = {
-        line  = '<leader>c',
-        block = '<leader>b',
+        line  = '<leader>cc',
+        block = '<leader>cb',
     },
     mappings = {
         basic    = true,
