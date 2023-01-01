@@ -1,5 +1,6 @@
--- plugin/nvim-treesitter
--- plugin/nvim-treesitter-refactor
+--
+-- TREESITTER
+--
 
 require 'nvim-treesitter.configs'.setup {
     ensure_installed = {},

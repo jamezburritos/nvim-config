@@ -2,78 +2,6 @@
 -- nvim - modal text editor
 --
 
--- modules
-require 'keybinds'
-require 'autos'
-
--- plugins
-require 'paq' {
-    -- package manager
-    'savq/paq-nvim',
-
-    -- miscellaneous
-    'windwp/nvim-autopairs',	    -- auto pairing
-    'norcalli/nvim-colorizer.lua',	-- color highlighting
-    'AmeerTaweel/todo.nvim',        -- comment highlighting
-    'numToStr/Comment.nvim',	    -- comments
-    'lewis6991/gitsigns.nvim',      -- git signcolumn
-    'goolord/alpha-nvim',	        -- greeter
-    'm-demare/hlargs.nvim',         -- highlight arguments
-    'nvim-lualine/lualine.nvim',	-- statusline
-    'anuvyklack/hydra.nvim',        -- submenus
-    'xiyaowong/nvim-transparent',   -- transparent background
-
-    -- colorschemes
-    'saihnne/everforest',
-    'nekonako/xresources-nvim',
-
-    -- completion
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-path',
-    'hrsh7th/nvim-cmp',
-
-    -- debugging
-    'mfussenegger/nvim-dap',
-    'rcarriga/nvim-dap-ui',
-    'theHamsta/nvim-dap-virtual-text',
-
-    -- file finder
-    'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope-fzf-native.nvim',
-    'nvim-telescope/telescope.nvim',
-
-    -- file tree
-    'kyazdani42/nvim-tree.lua',
-    'kyazdani42/nvim-web-devicons',
-
-    -- folding
-    'kevinhwang91/nvim-ufo',
-    'kevinhwang91/promise-async',
-
-    -- language support
-    'ron-rs/ron.vim',
-    'Fymyte/rasi.vim',
-    'tikhomirov/vim-glsl',
-    'preservim/vim-markdown',
-
-    -- language server
-    'neovim/nvim-lspconfig',
-
-    -- snippets
-    'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
-
-    -- treesitter
-    'nvim-treesitter/nvim-treesitter',
-    'nvim-treesitter/nvim-treesitter-refactor',
-
-    -- window autosizing
-    'anuvyklack/animation.nvim',
-    'anuvyklack/middleclass',
-    'anuvyklack/windows.nvim',
-}
-
 -- options
 vim.o.cursorline 	 = true
 vim.o.expandtab 	 = true
@@ -114,6 +42,10 @@ vim.diagnostic.config {
     virtual_text = true,
 }
 
+-- modules
+require 'plugins'
+require 'keybinds'
+
 -- colors
 vim.g.transparent_enabled = true
-vim.cmd 'colorscheme xresources'
+vim.cmd 'colorscheme molokai'
