@@ -16,7 +16,7 @@ require 'paq' {
     'norcalli/nvim-colorizer.lua',	-- color highlighting
     'AmeerTaweel/todo.nvim',        -- comment highlighting
     'numToStr/Comment.nvim',	    -- comments
-    'lewis6991/gitsigns.nvim',      -- git signcolumn
+    'airblade/vim-gitgutter',       -- git signcolumn
     'goolord/alpha-nvim',	        -- greeter
     'm-demare/hlargs.nvim',         -- highlight arguments
     'nvim-lualine/lualine.nvim',	-- statusline
@@ -24,8 +24,8 @@ require 'paq' {
     'xiyaowong/nvim-transparent',   -- transparent background
 
     -- colorschemes
-    'saihnne/everforest',
-    'nekonako/xresources-nvim',
+    'fatih/molokai',
+    'AlphaTechnolog/pywal.nvim',
 
     -- completion
     'hrsh7th/cmp-buffer',
@@ -56,6 +56,7 @@ require 'paq' {
     'Fymyte/rasi.vim',
     'tikhomirov/vim-glsl',
     'preservim/vim-markdown',
+    'elkowar/yuck.vim',
 
     -- language server
     'neovim/nvim-lspconfig',
@@ -67,6 +68,7 @@ require 'paq' {
     -- treesitter
     'nvim-treesitter/nvim-treesitter',
     'nvim-treesitter/nvim-treesitter-refactor',
+    'windwp/nvim-ts-autotag',
 
     -- window autosizing
     'anuvyklack/animation.nvim',
@@ -114,6 +116,11 @@ vim.diagnostic.config {
     virtual_text = true,
 }
 
+-- plugin setup 
+require 'pywal'.setup {}
+
 -- colors
 vim.g.transparent_enabled = true
-vim.cmd 'colorscheme xresources'
+vim.cmd 'colorscheme pywal'
+vim.cmd 'hi StatusLineNC guifg=NONE'
+

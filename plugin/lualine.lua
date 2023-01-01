@@ -5,7 +5,8 @@ require 'lualine'.setup {
         component_separators = { left = ' ', right = ' ' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = { 'alpha', winbar = { 'NvimTree' } },
-        fmt = string.lower
+        fmt = string.lower,
+        theme = 'pywal-nvim'
     },
 
     winbar = {

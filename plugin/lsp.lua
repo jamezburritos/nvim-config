@@ -25,7 +25,7 @@ local lsp_defaults = {
     end
 }
 
-for _, server in ipairs { 'clangd', 'pyright', 'rust_analyzer' } do
+for _, server in ipairs { 'clangd', 'pyright', 'rust_analyzer', 'jsonls', 'emmet_ls', 'svelte' } do
     require 'lspconfig'[server].setup(lsp_defaults)
 end
 

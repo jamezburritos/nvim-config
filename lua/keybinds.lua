@@ -35,12 +35,6 @@ map('n', '<leader>h', function() vim.lsp.buf.hover() end)
 map('n', '<leader>r', function() vim.lsp.buf.rename() end)
 map('n', 'gd',        function() vim.lsp.buf.definition() end)
 
--- unmap arrow keys
-for _, key in ipairs { 'left', 'right', 'up', 'down' } do
-    map({ '', 'i' }, '<' .. key .. '>', '<nop>')
-    map({ '', 'i' }, '<C-' .. key .. '>', '<nop>')
-end
-
 -- ctrl-hjkl motions
 for _, key in ipairs { 'h', 'j', 'k', 'l' } do
     map('i', '<C-' .. key .. '>', cmd ('norm ' .. key))
