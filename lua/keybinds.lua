@@ -12,9 +12,6 @@ end
 
 local cmd   = require 'hydra.keymap-util'.cmd
 
--- leader key
-vim.g.mapleader = ' '
-
 -- exit insert mode
 map('i', 'jk', '<esc>')
 map('i', 'kj', '<esc>')

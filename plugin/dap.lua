@@ -1,9 +1,9 @@
--- plugin/nvim-dap
+-- 
+-- DEBUG ADAPTER
+--
 local dap = require 'dap'
 
--- 
 -- ADAPTERS
---
 
 dap.adapters.lldb = {
   type = 'executable',
@@ -11,9 +11,7 @@ dap.adapters.lldb = {
   name = 'lldb'
 }
 
--- 
 -- CONFIGURATIONS
---
 
 dap.configurations.cpp = {
   {
