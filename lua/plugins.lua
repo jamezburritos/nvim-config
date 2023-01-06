@@ -17,15 +17,15 @@ vim.opt.rtp:prepend(lazypath)
 
 -- manage plugins 
 require 'lazy'.setup ({
-    'goolord/alpha-nvim',	            -- greeter
+    'goolord/alpha-nvim',	                -- greeter
 
-    { 'windwp/nvim-autopairs',          -- auto pairing
-        config = { 
-            map_cr = true 
-        } 
+    { 'windwp/nvim-autopairs',              -- auto pairing
+        config = {
+            map_cr = true
+        }
     },
 
-    { 'numToStr/Comment.nvim',	        -- comments
+    { 'numToStr/Comment.nvim',	            -- comments
         config = {
             toggler = {
                 line  = '<leader>cc',
@@ -43,21 +43,22 @@ require 'lazy'.setup ({
         }
     },
 
-    { 'lewis6991/gitsigns.nvim',        -- git signcolumn
+    { 'lewis6991/gitsigns.nvim',            -- git signcolumn
         config = {
             signcolumn = false,
             numhl = true
         }
     },
 
-    { 'm-demare/hlargs.nvim',           -- highlight arguments
-        config = true 
+    { 'm-demare/hlargs.nvim',               -- highlight arguments
+        config = true
     },
 
     -- TODO: remove this
-    'anuvyklack/hydra.nvim',            -- submenus
+    -- switch out for folke/which-key.nvim
+    'anuvyklack/hydra.nvim',                -- submenus
 
-    { 'nvim-lualine/lualine.nvim',	    -- statusline
+    { 'nvim-lualine/lualine.nvim',	        -- statusline
         config = {
             options = {
                 component_separators = { left = ' ', right = ' ' },
@@ -67,11 +68,11 @@ require 'lazy'.setup ({
             },
 
             winbar = {
-                lualine_c = { 'filename' }
+                lualine_c = {{ 'filename', path = 1 }}
             },
 
             inactive_winbar = {
-                lualine_c = { 'filename' }
+                lualine_c = {{ 'filename', path = 1 }}
             },
 
             sections = {
@@ -86,19 +87,21 @@ require 'lazy'.setup ({
         }
     },
 
-    { 'xiyaowong/nvim-transparent',     -- transparent background
-        config = { 
+    { 'xiyaowong/nvim-transparent',         -- transparent background
+        config = {
             enable = true
         }
     },
- 
-    { 'AmeerTaweel/todo.nvim',            -- comment highlighting
-        config = true 
+
+    { 'AmeerTaweel/todo.nvim',              -- comment highlighting
+        config = true
     },
+
+    -- TODO: finish sorting this
 
     -- colorschemes
     'tomasr/molokai',
-    
+
     -- completion
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-nvim-lsp',
@@ -121,15 +124,15 @@ require 'lazy'.setup ({
 
     -- file tree
     { 'kyazdani42/nvim-tree.lua',
-        dependencies = { 
+        dependencies = {
             'kyazdani42/nvim-web-devicons',
         },
-        config = true 
+        config = true
     },
 
     -- folding
-    { 'kevinhwang91/nvim-ufo', 
-        dependencies = { 
+    { 'kevinhwang91/nvim-ufo',
+        dependencies = {
             'kevinhwang91/promise-async',
         },
         config = true
@@ -152,7 +155,7 @@ require 'lazy'.setup ({
     'nvim-treesitter/nvim-treesitter',
 
     -- window autosizing
-    { 'anuvyklack/windows.nvim', 
+    { 'anuvyklack/windows.nvim',
         dependencies = {
             'anuvyklack/animation.nvim',
             'anuvyklack/middleclass',
