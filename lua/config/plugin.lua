@@ -52,6 +52,14 @@ require 'lazy'.setup {
 			local lsp = require 'lsp-zero'
 			lsp.preset('recommended')
 			lsp.setup()
+
+
+            vim.diagnostic.config {
+                virtual_text = true,
+                update_in_insert = true,
+                underline = true,
+                severity_sort = true,
+            }
 		end
 	},
 
@@ -152,6 +160,10 @@ require 'lazy'.setup {
                 }
             }
         end
+    },
+
+    { 'folke/trouble.nvim', 
+        config = true 
     },
 
     { 'rose-pine/neovim',
