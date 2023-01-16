@@ -143,6 +143,7 @@ require 'lazy'.setup {
                     { type = 'padding', val = 2 },
                     {
                         type = 'group',
+                        opts = { spacing = 1 },
                         val = {
                             button(' Search Files', 'C-f'),
                             button(' Search History', 'SPC fo'),
@@ -154,6 +155,20 @@ require 'lazy'.setup {
         end
     },
 
+    { 'brenoprata10/nvim-highlight-colors', 
+        config = {
+            render = 'background', 
+            enable_named_colors = true
+        }
+    },
+
+    { 'xiyaowong/nvim-transparent',
+        config = function()
+            require 'transparent'.setup {}
+            vim.cmd.TransparentEnable()
+        end
+    },
+
     { 'rose-pine/neovim',
 	    name = 'rose-pine',
 	    enabled = true,
@@ -162,7 +177,6 @@ require 'lazy'.setup {
 	    end
 	},
 
-    'ThePrimeagen/harpoon' ,
     'nvim-treesitter/nvim-treesitter' ,
     'mbbill/undotree',
     'tpope/vim-fugitive'
