@@ -15,20 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- plugin setup
 require 'lazy'.setup {
-	{ 'nvim-telescope/telescope.nvim',
-		tag = '0.1.0',
-		dependencies = {
-			'nvim-lua/plenary.nvim'
-		}
-	},
-
-    { 'kyazdani42/nvim-tree.lua',
-        dependencies = {
-            'kyazdani42/nvim-web-devicons',
-        },
-        config = true
-    },
-
 	{ 'VonHeikemen/lsp-zero.nvim',
 		dependencies = {
 			-- LSP Support
@@ -48,18 +34,48 @@ require 'lazy'.setup {
 			'L3MON4D3/LuaSnip',
 			'rafamadriz/friendly-snippets',
 		},
+
 		init = function()
 			local lsp = require 'lsp-zero'
 			lsp.preset('recommended')
 			lsp.setup()
+
+
+            vim.diagnostic.config {
+                virtual_text = true,
+                update_in_insert = true,
+                underline = true,
+                severity_sort = true,
+            }
 		end
 	},
 
-    { 'folke/which-key.nvim',
-        init = function()
-            vim.g.mapleader = ' '
-        end,
-        config = true
+    { 'nvim-treesitter/nvim-treesitter',
+        config = function()
+            require 'nvim-treesitter.configs'.setup {
+                sync_install = false,
+                auto_install = true,
+
+                ensure_installed = { "c", "lua", "rust" },
+                ignore_install = { "javascript" },
+
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = false,
+                },
+            }
+        end
+    },
+
+    { 'echasnovski/mini.nvim',
+        config = function()
+            require 'mini.align'.setup()
+            require 'mini.comment'.setup()
+            require 'mini.cursorword'.setup { delay = 1000 }
+            require 'mini.indentscope'.setup()
+            require 'mini.pairs'.setup()
+            require 'mini.surround'.setup()
+        end
     },
 
     { 'nvim-lualine/lualine.nvim',
@@ -89,17 +105,6 @@ require 'lazy'.setup {
                 lualine_z = { 'filetype' }
             }
         }
-    },
-
-    { 'echasnovski/mini.nvim',
-        config = function()
-            require 'mini.align'.setup()
-            require 'mini.comment'.setup()
-            require 'mini.cursorword'.setup { delay = 1000 }
-            require 'mini.indentscope'.setup()
-            require 'mini.pairs'.setup()
-            require 'mini.surround'.setup()
-        end
     },
 
     { 'goolord/alpha-nvim',
@@ -155,9 +160,42 @@ require 'lazy'.setup {
         end
     },
 
-    { 'brenoprata10/nvim-highlight-colors', 
+	{ 'nvim-telescope/telescope.nvim',
+		tag = '0.1.0',
+		dependencies = {
+			'nvim-lua/plenary.nvim'
+		}
+	},
+
+    { 'kyazdani42/nvim-tree.lua',
+        config = true,
+        dependencies = {
+            'kyazdani42/nvim-web-devicons',
+        }
+    },
+
+    { 'folke/noice.nvim',
+        config = true,
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+            'rcarriga/nvim-notify'
+        }
+    },
+
+    { 'folke/trouble.nvim',
+        config = true
+    },
+
+    { 'folke/which-key.nvim',
+        config = true,
+        init = function()
+            vim.g.mapleader = ' '
+        end
+    },
+
+    { 'brenoprata10/nvim-highlight-colors',
         config = {
-            render = 'background', 
+            render = 'background',
             enable_named_colors = true
         }
     },
@@ -166,18 +204,19 @@ require 'lazy'.setup {
         config = function()
             require 'transparent'.setup {}
             vim.cmd.TransparentEnable()
+
+            -- fix annoying nvim-notify popup
+            vim.api.nvim_set_hl(0, 'NotifyBackground', { bg = '#000000' })
         end
     },
 
     { 'rose-pine/neovim',
 	    name = 'rose-pine',
-	    enabled = true,
 	    init = function()
 		    vim.cmd.colorscheme('rose-pine')
 	    end
 	},
 
-    'nvim-treesitter/nvim-treesitter' ,
     'mbbill/undotree',
     'tpope/vim-fugitive'
 }
