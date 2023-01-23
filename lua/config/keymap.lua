@@ -16,7 +16,11 @@ which.register {
             g = { telescope.live_grep, 'live grep' },
             h = { telescope.help_tags, 'help pages' },
             o = { telescope.oldfiles,  'recent files' },
-        }
+        },
+
+        h = { vim.lsp.buf.hover, 'show hover' },
+        e = { vim.diagnostic.open_float, 'open float' },
+        r = { vim.lsp.buf.rename, 'rename symbol' }
     },
 
     ['<C-f>'] = { function()
@@ -29,8 +33,8 @@ which.register {
 
     ['\\'] = { nvim_tree.tree.toggle, 'open file explorer' },
 
-    ['jk'] = { '<ESC>', 'exit insert mode', mode = 'i' },
-    ['kj'] = { '<ESC>', 'exit insert mode', mode = 'i' },
+    jk = { '<ESC>', 'exit insert mode', mode = 'i' },
+    kj = { '<ESC>', 'exit insert mode', mode = 'i' },
 
     ['<C-h>'] = { '<left>',  'move cursor left',  mode = 'i' },
     ['<C-j>'] = { '<down>',  'move cursor down',  mode = 'i' },
