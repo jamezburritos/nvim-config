@@ -107,56 +107,29 @@ require 'lazy'.setup {
     },
 
     { 'goolord/alpha-nvim',
-        config = function()
-            local function button(val, shortcut)
-                return {
-                    type = 'button',
-                    val = val,
-                    on_press = function() return nil end,
-                    opts = {
-                        position = 'center',
-                        hl = 'Directory',
-                        width = 35,
-                        shortcut = shortcut,
-                        align_shortcut = 'right'
-                    }
-                }
-            end
-
-            require 'alpha'.setup {
-                opts = {
-                    noautocmd = true,
-                    setup = function()
-                        vim.b.miniindentscope_disable = true
-                    end
-                },
-                layout = {
-                    { type = 'padding', val = 10 },
-                    {
-                        type = 'text',
-                        opts = { position = 'center', hl = 'String' },
-                        val = {
-                            [[                               __                ]],
-                            [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-                            [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-                            [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-                            [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-                            [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
-                        }
-                    },
-                    { type = 'padding', val = 2 },
-                    {
-                        type = 'group',
-                        opts = { spacing = 1 },
-                        val = {
-                            button(' Search Files', 'C-f'),
-                            button(' Search History', 'SPC fo'),
-                            button(' Search Help', 'SPC fh'),
-                        }
+        config =  {
+            opts = {
+                noautocmd = true,
+                setup = function()
+                    vim.b.miniindentscope_disable = true
+                end
+            },
+            layout = {
+                { type = 'padding', val = 10 },
+                {
+                    type = 'text',
+                    opts = { position = 'center', hl = 'String' },
+                    val = {
+                        [[                               __                ]],
+                        [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
+                        [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
+                        [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
+                        [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
+                        [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
                     }
                 }
             }
-        end
+        }
     },
 
 	{ 'nvim-telescope/telescope.nvim',
@@ -197,17 +170,6 @@ require 'lazy'.setup {
             render = 'background',
             enable_named_colors = true
         }
-    },
-
-    { 'xiyaowong/nvim-transparent',
-        enabled = false,
-        config = function()
-            require 'transparent'.setup {}
-            vim.cmd.TransparentEnable()
-
-            -- fix annoying nvim-notify popup
-            vim.api.nvim_set_hl(0, 'NotifyBackground', { bg = '#000000' })
-        end
     },
 
     { 'rose-pine/neovim',
