@@ -87,16 +87,11 @@ require 'lazy'.setup {
             options = {
                 component_separators = { left = ' ', right = ' ' },
                 section_separators = { left = '', right = '' },
-                disabled_filetypes = { 'alpha', winbar = { 'NvimTree' } },
-                fmt = string.lower
+                disabled_filetypes = { 'alpha' },
             },
 
-            winbar = {
-                lualine_c = { 'filename' }
-            },
-
-            inactive_winbar = {
-                lualine_c = { 'filename' }
+            tabline = {
+                lualine_b = { 'windows' }
             },
 
             sections = {
