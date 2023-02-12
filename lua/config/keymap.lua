@@ -20,7 +20,8 @@ which.register {
 
         h = { vim.lsp.buf.hover, 'show hover' },
         e = { vim.diagnostic.open_float, 'open float' },
-        r = { vim.lsp.buf.rename, 'rename symbol' }
+        r = { vim.lsp.buf.rename, 'rename symbol' },
+        a = { vim.lsp.buf.code_action, 'code action' }
     },
 
     ['<C-f>'] = { function()

@@ -38,9 +38,13 @@ require 'lazy'.setup {
 		init = function()
 			local lsp = require 'lsp-zero'
 			lsp.preset('recommended')
+            lsp.nvim_workspace()
 			lsp.setup()
 
+            -- gdscript lsp is not supported by Mason
+            require 'lspconfig'.gdscript.setup {}
 
+            -- diagnostic options
             vim.diagnostic.config {
                 virtual_text = true,
                 update_in_insert = true,
@@ -201,6 +205,7 @@ require 'lazy'.setup {
     },
 
     { 'xiyaowong/nvim-transparent',
+        enabled = false,
         config = function()
             require 'transparent'.setup {}
             vim.cmd.TransparentEnable()
