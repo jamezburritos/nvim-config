@@ -6,9 +6,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
     group = augroup,
     pattern = "*",
     callback = function()
-        local path = vim.fn.expand "%:p:h"
-        vim.api.nvim_set_current_dir(path)
-        if vim.fn.isdirectory(path) then
+        vim.api.nvim_set_current_dir(vim.fn.expand "%:p:h")
+        if vim.fn.isdirectory(vim.fn.expand "%:p") then
             vim.cmd "Nvdash"
         end
     end,
