@@ -1,5 +1,5 @@
 # nvim-config
-My Lua-Based Neovim configuration, using [NvChad](https://github.com/NvChad/NvChad).
+My Lua-based Neovim configuration, using [NvChad](https://github.com/NvChad/NvChad).
 
 # Installation
 Install NvChad from the link above, then clone the repo to `~/.config/nvim/lua/custom`:
