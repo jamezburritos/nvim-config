@@ -27,7 +27,7 @@ end
 
 -- NVChad Options
 ---@type ChadrcConfig
-local M = {
+local config = {
     plugins = "custom.plugins",
 
     ui = {
@@ -38,6 +38,15 @@ local M = {
             load_on_startup = true,
         },
     },
+
+    mappings = {
+        general = {
+            i = {
+                ["jk"] = { "<esc>", "Exit Insert Mode" },
+                ["kj"] = { "<esc>", "Exit Insert Mode" },
+            },
+        },
+    },
 }
 
-return M
+return config

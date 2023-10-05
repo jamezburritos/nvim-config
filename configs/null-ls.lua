@@ -1,11 +1,10 @@
-local null_ls = require "null-ls"
-
+local null = require "null-ls"
 local augroup = vim.api.nvim_create_augroup("LspFormat", {})
 
 local opts = {
     sources = {
-        null_ls.builtins.formatting.clang_format,
-        null_ls.builtins.formatting.stylua,
+        null.builtins.formatting.clang_format,
+        null.builtins.formatting.stylua,
     },
 
     on_attach = function(client, bufnr)

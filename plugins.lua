@@ -1,48 +1,48 @@
 local plugins = {
     {
         "jose-elias-alvarez/null-ls.nvim",
-        event = "VeryLazy",
+        lazy = false,
         opts = function()
             return require "custom.configs.null-ls"
         end,
     },
 
     {
-        "neovim/nvim-lspconfig",
-        config = function()
-            require "plugins.configs.lspconfig"
-            require "custom.configs.lspconfig"
+        "williamboman/mason.nvim",
+        opts = {
+            -- NOTE: Supported LSP servers should be installed in configs/lspconfig.lua
+            ensure_installed = {
+                -- C/C++
+                "clang-format",
+
+                -- Lua
+                "stylua",
+            },
+        },
+    },
+
+    {
+        "williamboman/mason-lspconfig.nvim",
+        lazy = false,
+        dependencies = {
+            "williamboman/mason.nvim",
+            "neovim/nvim-lspconfig",
+        },
+        opts = function()
+            return require "custom.configs.lspconfig"
         end,
     },
 
     {
-        "williamboman/mason.nvim",
+        "nvim-tree/nvim-tree.lua",
         opts = {
-            ensure_installed = {
-                -- C/C++
-                "clangd",
-                "clang-format",
-
-                -- Rust
-                "rust-analyzer",
-
-                -- Lua
-                "stylua",
-
-                -- Golang
-                "gopls",
-
-                -- Python
-                "pyright",
-                "black",
-
-                -- JavaScript
-                "eslint-lsp",
-                "vue-language-server",
-                "svelte-language-server",
+            renderer = {
+                group_empty = true,
             },
         },
     },
+
+    "fedorenchik/fasm.vim",
 }
 
 return plugins
